@@ -1,3 +1,41 @@
+# 修改開發環境
+1. 使用poetry. python-dotenv取代dotenv
+```
+p init
+p add numpy
+p add python-dotenv
+poetry add $(cat requirements.txt)
+code .
+```
+2. Create debug env in VSCode
+```
+create a launch.json file > Python Debugger > Python file woth Arguments
+
+launch.json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--api", "openai",
+                "--model", "gpt-4o",
+                "--sentences=example_cases/clinical_text.txt"
+            ],
+        }
+    ]
+}
+```
+
+在`entity_extractor.py`執行debug
+
 # Using AI Chains for SNOMED CT entity extraction from free text clinical notes
 
 LLM Chains allow us to divide a complex task into a Chain of smaller tasks, where the output of one prompt becomes the input of the next.
