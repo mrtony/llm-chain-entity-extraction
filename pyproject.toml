@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "llm-chain-entity-extraction"
+version = "0.1.0"
+description = ""
+authors = ["Tony Chen <tonychenn@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^2.1.2"
+python-dotenv = "1.0.1"
+bardapi = "1.0.0"
+openai = "1.25.2"
+requests = "2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
